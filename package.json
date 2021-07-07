@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "name": "poc",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "preact build -no-prerender --no-sw --brotli --template src/index.ejs",
+    "dev": "preact watch --template src/index.ejs --no-sw",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "preact",
+    "ignorePatterns": [
+      "build/"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-preact-pure": "^2.0.0",
+    "eslint": "^7.30.0",
+    "eslint-config-preact": "^1.1.0",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^24.9.0",
+    "jest-preset-preact": "^1.0.0",
+    "preact-cli": "^3.0.0",
+    "prettier": "^2.3.2",
+    "sirv-cli": "1.0.3",
+    "ts-jest": "^25.2.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "preact": "^10.3.2",
+    "preact-global-state": "^1.0.4",
+    "preact-habitat": "^3.3.0",
+    "preact-render-to-string": "^5.1.4"
+  },
+  "jest": {
+    "preset": "jest-preset-preact",
+    "setupFiles": [
+      "<rootDir>/tests/__mocks__/browserMocks.js",
+      "<rootDir>/tests/__mocks__/setupTests.js"
+    ]
+  }
+}
